@@ -5,6 +5,19 @@ import { products } from "../../../Starting-code/data/products";
 import "./HomePage.css";
 
 function HomePage() {
+  // fetch('http://localhost:3000/api/products')
+  // .then((response)=>{
+  //   response.json().then((data)=>{
+  //     console.log(data)
+  //   })
+  // })
+
+  fetch('http://localhost:3000/api/products')
+    .then((response)=>{
+        return response.json();
+    }).then((data)=>{
+        console.log(data)
+    });
   return (
     <>
       <title>ECommerce Project</title>
