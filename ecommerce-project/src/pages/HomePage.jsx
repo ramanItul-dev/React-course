@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 import "./HomePage.css";
 
-function HomePage() {
+function HomePage({cart}) {
   // fetch('http://localhost:3000/api/products')
   // .then((response)=>{
   //   response.json().then((data)=>{
@@ -20,7 +20,6 @@ function HomePage() {
   //   });
 
   const[products, setProducts] = useState([]);
-  const[cart, setCart] = useState([]);
 
 
   useEffect(()=>{
@@ -28,11 +27,6 @@ function HomePage() {
       .then((response)=>{
           // console.log(response.data)
           setProducts(response.data)
-      });
-
-    axios.get('/api/cart-items')
-      .then((response)=>{
-          setCart(response.data)
       });
   },[])
 
