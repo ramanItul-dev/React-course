@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import "./HomePage.css";
 import ProductsGrid from "./ProductsGrid";
 
-function HomePage({cart}) {
+function HomePage({cart, loadCart}) {
   // fetch('http://localhost:3000/api/products')
   // .then((response)=>{
   //   response.json().then((data)=>{
@@ -40,7 +40,7 @@ function HomePage({cart}) {
       <title>ECommerce Project</title>
       <Header cart={cart}/>
       <div className="home-page">
-        <ProductsGrid products={products}/>
+        <ProductsGrid products={products} loadCart={loadCart} />
       </div>
     </>
   );
